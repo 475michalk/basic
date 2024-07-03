@@ -1,11 +1,14 @@
-exports.createUser = () => {
+exports.createUser = (req, res) => {
     console.log("addUser function");
 }
-exports.updateUser = () => {
+
+
+exports.updateUser = (req, res) => {
+
     console.log("updateUser function");
 
 }
-exports.deleteUser = () => {
+exports.deleteUser = (req, res) => {
     console.log("deleteUser function");
 }
 
