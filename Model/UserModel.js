@@ -8,12 +8,21 @@ class User {
 
     static users = []; // מערך לאחסון המשתמשים
 
+ 
     static createUser(id, nameUser, email, phone) {
+        if (!id || !nameUser || !email || !phone) {
+            throw new Error('All fields are required');
+        }
+    
+        if (!email.includes('@') || email.includes(' ')) {
+            throw new Error('Invalid email format');
+        }
+    
         const newUser = new User(id, nameUser, email, phone);
         this.users.push(newUser);
         return newUser;
     }
-
+    
     static updateUser(id, updatedUser) {
         const userIndex = this.users.findIndex(user => user.id === id);
         if (userIndex !== -1) {
