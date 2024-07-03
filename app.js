@@ -1,7 +1,17 @@
 const express = require("express");
-const userRouter = require('./user_routing')
+const routerUser = require("./Route/routing");
+
 const app = express();
-app.use("/", userRouter)
-app.listen(() => {
-    console.log("running at https://localhost:" + 5000);
-})
+const PORT = 3000;
+
+app.use(express.json());
+
+app.get('/', (req, res) => {
+    res.send('welcome');
+});
+
+app.use('/user', routerUser);
+
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
