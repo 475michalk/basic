@@ -1,9 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { UserController } from './user.controller';
 import { UserService } from './user.service';
-import { UserDto } from './user.dto';
 import * as request from 'supertest';
 import { INestApplication } from '@nestjs/common';
+import { UserDto } from 'src/src/user.dto';
 
 describe('UserController', () => {
   let app: INestApplication;
